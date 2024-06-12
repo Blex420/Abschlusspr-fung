@@ -1,40 +1,157 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>reveal.js</title>
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+<body>
+<div class="reveal">
+	<div class="slides">
+		<section data-background="images/test4.svg">
+			<h3>Optimierung des internen Informationsaustauschs</h3>
+			<p>Entwicklung einer Middleware und eines Microsoft Teams Bots</p>
+		</section>
 
-		<title>reveal.js</title>
+		<section>
+			<h2>Vorstellung</h2>
+			<ul>
+				<li>Name: [Dein Name]</li>
+				<li>Wohnsitz: [Dein Wohnort]</li>
+				<li>Fachrichtung: [Deine Fachrichtung]</li>
+			</ul>
+		</section>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<section>
+			<h2>Projektumfeld</h2>
+			<ul>
+				<li>Betrieb: Seitwerk GmbH</li>
+				<li>Gegründet 2004</li>
+				<li>Aktuell 86 Mitarbeiter</li>
+				<li>Medienagentur</li>
+				<li>Gesamtes Spektrum der neuen Medien (Grafik, Web, E-learning, Multimedia, Marketing)</li>
+			</ul>
+		</section>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+		<section>
+			<h2>Agenda</h2>
+			<ul>
+				<li>Einleitung</li>
+				<li>Projektumfeld</li>
+				<li>Analyse Phase</li>
+				<li>Entwurf</li>
+				<li>Implementierung</li>
+				<li>Testing und Deployment</li>
+				<li>Fazit und Ausblick</li>
+			</ul>
+		</section>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+		<section>
+			<h2>Analyse Phase</h2>
+			<h3>Ist-Analyse</h3>
+			<p>Das aktuelle Intranet ist veraltet und ineffizient, was zu langen Wartezeiten für die Informationsbeschaffung führt.</p>
+			<h3>Projektbegründung</h3>
+			<p>Zeitersparnis durch vereinfachten Zugriff auf Informationen.</p>
+			<h3>Wirtschaftlichkeitsanalyse</h3>
+			<p>Reduzierung der Telefonzeit durch schnelleren Zugriff auf Informationen.</p>
+			<h3>Risikoanalyse</h3>
+			<p>Identifikation potenzieller Sicherheitslücken und deren Minimierung.</p>
+		</section>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+		<section>
+			<h2>Entwurf</h2>
+			<h3>Architekturentwurf</h3>
+			<p>Erstellung eines Architekturmodells zur Erkennung der Stellen mit dem höchsten Angriffsrisiko.</p>
+			<p><img src="/architecture.png" alt="Architekturdiagramm"></p>
+		</section>
+
+		<section>
+			<h2>Implementierung</h2>
+			<h3>Middleware</h3>
+			<p>Entwicklung der Middleware mit Node.js und Express.js.</p>
+			<ul>
+				<li>Vorteile von Node.js: hohe Performance und Skalierbarkeit.</li>
+				<li>Express.js: Minimalistisches Web-Framework, das die Entwicklung von APIs erleichtert.</li>
+			</ul>
+			<p>Die Middleware empfängt Anfragen vom Chatbot, authentifiziert sich beim Intranet und ruft die benötigten Daten ab.</p>
+		</section>
+
+		<section>
+			<h3>Implementierung der Routen</h3>
+			<p>Erstellung der Routen, die an die Schnittstellen im Intranet anfragen.</p>
+			<ul>
+				<li>Route 1: Kundeninformationen</li>
+				<li>Route 2: Eigene Informationen</li>
+				<li>Route 3: Projektinformationen</li>
+			</ul>
+		</section>
+
+		<section>
+			<h3>Implementierung des Teams-Bots</h3>
+			<p>Erstellung des Grundgerüsts mit Hilfe des Teams Toolkit.</p>
+			<p>Implementierung der Command-Handler:</p>
+			<ul>
+				<li>Schlüsselwörter erkennen und entsprechende Commands ausführen.</li>
+			</ul>
+			<p>Antwortnachricht vom Bot im Teams-Chat:</p>
+			<p><img src="/Botresponse.png" alt="Bot Response"></p>
+		</section>
+
+		<section>
+			<h3>Sicherheitsmechanismen</h3>
+			<p>Token-Beschaffung in der Middleware mit Client Secret und ID.</p>
+			<p>Überprüfung der Benutzerberechtigung durch den Teams-Bot:</p>
+			<p><img src="/Sicherheit.png" alt="Benutzerüberprüfung"></p>
+			<p>Firewall-Einstellungen:</p>
+			<ul>
+				<li>Nur spezifische IP-Adressen aus dem Azure-Bereich dürfen auf den Server zugreifen.</li>
+				<li>Nur Anfragen an Port 3000 sind erlaubt.</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Testing und Deployment</h2>
+			<h3>Testing</h3>
+			<p>Lokale Tests der Middleware und des Teams-Bots während der gesamten Implementierung.</p>
+			<ul>
+				<li>Whitebox-Tests</li>
+				<li>Blackbox-Tests mit anderen Entwicklern</li>
+			</ul>
+			<p>Live-Tests zur Überprüfung der Kommunikation und Firewall-Einstellungen.</p>
+		</section>
+
+		<section>
+			<h3>Deployment</h3>
+			<h4>Middleware Deployment</h4>
+			<p>Die Middleware wurde auf einem Ubuntu-Server in der DMZ des Seitwerk-Netzwerks deployt.</p>
+			<p>Git-Clone-Verfahren für einfache Updates und Fehlerbehebungen.</p>
+			<h4>Teams-Bot Deployment</h4>
+			<p>Deployment auf den Microsoft Azure-Servern mit Hilfe des Teams Toolkits.</p>
+			<p>Notwendige Vorkehrungen im Azure Admin Center waren bereits vorhanden und wurden vom IT-Administrator eingerichtet.</p>
+		</section>
+
+		<section>
+			<h2>Fazit und Ausblick</h2>
+			<p>Vorteile der Lösung: Schnellerer und sicherer Zugriff auf wichtige Informationen, erhöhte Effizienz und Produktivität.</p>
+			<p>Ausblick: Erweiterung um zusätzliche Funktionen und Weiterentwicklung basierend auf Nutzerfeedback.</p>
+		</section>
+	</div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+	Reveal.initialize({
+		hash: true,
+		plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+	});
+</script>
+</body>
 </html>
