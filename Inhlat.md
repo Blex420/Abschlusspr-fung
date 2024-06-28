@@ -101,4 +101,9 @@ wwwwwwwwwww
 ### die middlware habe ich ebenso local auf meinem rechner testen können in dem ich sie gestartet und mit curl befeheln im terminal  die fetch anfragen des Bots imitiert habe 
 ### die kommunikation zwischen den systemen und die firewall reglen konnte ich erst testen nachdem ich die middlware auf einem schon vorhanden ubuntu server deployed habe, ich habe mich dabei entschieden dies per ssh und dem git clone verfahren zu machen
 ###  um so auf fehler oder zukünftige erweiterungen schnell regieren zu könnenn... nach dem die middlware erfolgreich deplyed war musste ich nur noch den bot auf die bereits vorhanden und konfikurtierten azure resource deployen
-#### dafür musste ebenfalls wie fürs testen des bot meinen microsoft acc verbinden und aus der ide deployen 
+### dafür musste ebenfalls wie fürs testen des bot meinen microsoft acc verbinden und aus der ide deployen 
+
+# 11. Fazit/Ausblick
+### als letztes kommen wir noch zu meinem Fazit und zwar wurde das Projektziel erreicht und der Bot wird von mitarbeitern Verwendet und spaart diesen Zeit
+### zum lession learnd punkt kann ich sagen das ich nun aufjedenfall weiß das sobald man mit Azure Produkten arbeitet man sich viel zeit für die doku nehemn muss 
+### und für die zukunft ist schon eine erweiterungen für die inventar verwaltung geplant  
