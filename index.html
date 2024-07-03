@@ -16,7 +16,7 @@
 <body class="reveal no-cursor">
 <div class="slides">
 	<section data-background="images/test4.svg">
-		<h3>Entwicklung eines Microsoft Teams Bots und einer Middlware</h3>
+		<h3>Entwicklung eines Microsoft Teams Chat Bot </h3>
 		<p>zur Optimierung des internen Informationsaustauschs</p>
 
 		<aside class="notes">
@@ -92,9 +92,8 @@
 			<h3>Ist-Zustand</h3>
 			<ul>
 				<li class="fragment" style="width: 105%;">Verwendung des lokal gehosteten Intranets</li>
-				<li class="fragment">Veraltete Oberfläche und CMS-System</li>
+				<li class="fragment">Veraltete Oberfläche</li>
 				<li class="fragment">Nur von innerhalb des Netzwerks erreichbar</li>
-				<li class="fragment">Eingeschränkte und ineffiziente Informationsbeschaffung</li>
 			</ul>
 		</section>
 		<section>
@@ -105,15 +104,14 @@
 				<li class="fragment">Sichere Bereitstellung von Informationen auch von außen</li>
 			</ul>
 		</section>
-		<section>
-			<h3>Risikoanalyse</h3>
-			<ul>
-				<li>Datenschutzrisiken</li>
-				<li>Zugriff von außerhalb auf interne Netzwerke</li>
-				<li>Sicherheitslücken der Systeme</li>
-				<li>Sichere Datenübertragung</li>
-			</ul>
-		</section>
+<!--		<section>-->
+<!--			<h3>Risikoanalyse</h3>-->
+<!--			<ul>-->
+<!--				<li  class="fragment" >Datenschutzrisiken</li>-->
+<!--				<li  class="fragment" >Sicheren Zugriff von außerhalb auf internes Netzwerk</li>-->
+<!--				<li  class="fragment" >Sicherheitslücken der Systeme</li>-->
+<!--			</ul>-->
+<!--		</section>-->
 	</section>
 
 
@@ -132,18 +130,20 @@
 		<section>
 			<h3>Projektplanung</h3>
 			<ul>
-				<li>Benötigte Informationsarten identifiziert</li>
-				<li>Teams als Benutzeroberfläche</li>
-				<li>Aufgabenpakete erstellt</li>
+				<li class="fragment">Benötigte Informationsarten identifiziert</li>
+				<li class="fragment">Teams als Benutzeroberfläche</li>
+				<li class="fragment">Grobe Aufgabenpakete erstellt</li>
 			</ul>
 		</section>
 		<section>
 			<h3>Architekturplanung</h3>
 			<ul>
-				<li>Aufbau des Seitwerk Netzwerks</li>
-				<li>Sicherheitskritische Stellen identifiziert</li>
+				<li class="fragment">Aufbau des Seitwerk Netzwerks</li>
+				<li class="fragment">Sicherheitskritische Stellen identifiziert</li>
+				<div class="fragment">
 				<li>Middleware als Schutzmechanismus</li>
 				<img src="images/Sicherheit.png" alt="Architektur Entwurf">
+				</div>
 			</ul>
 		</section>
 		<section>
@@ -170,36 +170,46 @@
 			</ul>
 		</section>
 		<section>
+			<h3>Teams-Bot</h3>
+			<ul>
+				<li>Entwicklung mit Teams Toolkit</li>
+				<li class="fragment" >Command-Handler</li>
+			</ul>
+			<img class="fragment" src="images/Auswahl.png" alt="Auswahl Bot" width="60%">
+		</section>
+		<section>
+			<ul>
+				<li class="fragment">URL konstruktion für die Anfrage an die middleware</li>
+			</ul>
+			<img class="fragment" src="images/URL-für-Middlware.png" alt="Botresponse" width="full">
+		</section>
+		<section>
+			<img src="images/architecture.png" alt="Botresponse" width="full">
+		</section>
+		<section>
 			<h3>Middleware</h3>
 			<ul>
 				<li>Node.js und Express.js</li>
 				<li>Routen für die Datenabfrage</li>
-				<li>Token-System</li>
+				<img src="images/URL-für_intranet.png" alt="Botresponse" width="full">
 			</ul>
-		</section>
-		<section>
-			<h3>Teams-Bot</h3>
-			<ul>
-				<li>Entwicklung mit Teams Toolkit</li>
-				<li>Command-Handler</li>
-			</ul>
-			<img src="images/Auswahl.png" alt="Auswahl Bot" width="60%">
 		</section>
 			<section>
 			<ul>
-				<li>Antworten im JSON-Format</li>
-				<li>Formatierung der Daten für die Ausgabe</li>
+				<li class="fragment">Antworten im JSON-Format</li>
+				<li class="fragment">Formatierung der Daten für die Ausgabe</li>
 			</ul>
-			<img src="images/Botresponse.png" alt="Botresponse" width="60%">
+			<img class="fragment" src="images/Botresponse.png" alt="Botresponse" width="60%">
 		</section>
-		<section>
+		<!--<section>
 			<h3>Sicherheitsmechanismen</h3>
 			<ul>
 				<li>Token-Beschaffung in der Middleware</li>
 				<li>Benutzerüberprüfung durch den Teams-Bot</li>
 				<li>Firewall-Einstellungen</li>
 			</ul>
-		</section>
+		</section>-->
+
 	</section>
 
 	<section>
