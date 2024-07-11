@@ -202,7 +202,7 @@
 		<section>
 			<h3>Architekturplanung</h3>
 			<ul>
-				<li class="fragment">Aufbau des Seitwerk Netzwerks</li>
+				<li>Aufbau des Seitwerk Netzwerks</li>
 				<div class="fragment">
 					<li>Sicherheitskritische Stellen identifiziert</li>
 					<img src="images/Sicherheit.png" alt="Architektur Entwurf">
@@ -283,7 +283,41 @@
 		</section>
 		<section>
 			<ul>
-				<li class="fragment">URL-Konstruktion für die Anfrage an die Middleware</li>
+				<li >Fetch Methode für die Anfrage an die Middleware</li>
+			</ul>
+			<pre class="fragment"><code>
+				const apiUrl = `http://firewall.seitwerk.net:3000/whoami?login=${encodeURIComponent(userEmail)}&timeperiod=${timePeriod}`;
+
+				try {
+				const response = await fetch(apiUrl, {
+				method: 'GET',
+				headers: {
+				'Content-Type': 'application/json',
+				}
+				});
+</code></pre>
+			<aside class="notes">
+				<ul>
+					<li>Erklärung der URL-Konstruktion für die Middleware</li>
+					<li>Wie die Anfragen an die Middleware gesendet werden</li>
+				</ul>
+			</aside>
+		</section>
+		<section>
+			<img src="images/architekturwowirgeradesind.png" alt="Botresponse" width="full">
+			<aside class="notes">
+				<ul>
+					<li>Wo wir uns gerade befinden im System BILD ZEIGEN</li>
+					<li>Middleware damit umgeht, kommen wir jetzt dazu</li>
+				</ul>
+			</aside>
+		</section>
+		<section>
+			<h3>Middleware</h3>
+			<ul>
+				<li>Express.js</li>
+				<li>Routen für die Datenabfrage</li>
+
 			</ul>
 			<pre class="fragment" ><code >
 async function whoami(req, res) {
@@ -303,40 +337,6 @@ async function whoami(req, res) {
   </code></pre>
 			<aside class="notes">
 				<ul>
-					<li>Erklärung der URL-Konstruktion für die Middleware</li>
-					<li>Wie die Anfragen an die Middleware gesendet werden</li>
-				</ul>
-			</aside>
-		</section>
-		<section>
-			<img src="images/architecture.png" alt="Botresponse" width="full">
-			<aside class="notes">
-				<ul>
-					<li>Wo wir uns gerade befinden im System BILD ZEIGEN</li>
-					<li>Middleware damit umgeht, kommen wir jetzt dazu</li>
-				</ul>
-			</aside>
-		</section>
-		<section>
-			<h3>Middleware</h3>
-			<ul>
-				<li>Express.js</li>
-				<li>Routen für die Datenabfrage</li>
-
-			</ul>
-			<pre><code>
-				const apiUrl = `http://firewall.seitwerk.net:3000/whoami?login=${encodeURIComponent(userEmail)}&timeperiod=${timePeriod}`;
-
-				try {
-				const response = await fetch(apiUrl, {
-				method: 'GET',
-				headers: {
-				'Content-Type': 'application/json',
-				}
-				});
-</code></pre>
-			<aside class="notes">
-				<ul>
 					<li>Erklärung der Middleware-Entwicklung</li>
 					<li>Entwicklungsarbeit 3 passende Routen für die jeweils passenden Command-Handler</li>
 					<li>Routen ähnlich zu Command-Handler URL für API-Anfrage an Intranet</li>
@@ -346,22 +346,12 @@ async function whoami(req, res) {
 		</section>
 		<section>
 			<ul>
-				<div class="fragment">
+				<div>
 					<li>Antworten im JSON-Format</li>
 				</div>
 				<pre class="fragment"><code >
 				{
-					"name": "Atréus Engelniederhammer" ,
-					"groups": [
-						"azubi",
-						"intern",
-						"developer",
-						"inventar",
-						"backenduser"
-					],
-					"totalHours": "5009.5",
-					"absencehours": "2073.5" ,
-					"nettoHours": "2936",
+					"name": "Atréus Engelniederhammer",
 					"projects": {
 						"loggedHours": [
 							{
@@ -370,9 +360,9 @@ async function whoami(req, res) {
 							"project_id": "130"
 							},
 							{
-							"project _name": "Kataloge",
+							"project _name": "IFB.de",
 							"total hours": "7.5",
-							"project_id": "2553"
+							"project_id": "183"
 							},
 							{
 							"project _name": "Service & Technik",
@@ -434,7 +424,7 @@ async function whoami(req, res) {
 		<section>
 			<h3>Teams-Bot Test</h3>
 			<ul>
-				<li class="fragment">Hilfe durch Teams Toolkit</li>
+				<li>Hilfe durch Teams Toolkit</li>
 				<img class="fragment" src="images/teamstool.png" alt="teamstool" width="60%">
 			</ul>
 			<aside class="notes">
@@ -448,7 +438,7 @@ async function whoami(req, res) {
 		<section>
 			<h3>Testing der Middleware</h3>
 			<ul>
-				<li class="fragment">Curl-Anfragen im Terminal</li>
+				<li >Curl-Anfragen im Terminal</li>
 				<li class="fragment">System-Kommunikation nach Deployment</li>
 			</ul>
 			<aside class="notes">
@@ -461,7 +451,7 @@ async function whoami(req, res) {
 		<section>
 			<h3>Deployment der Middleware</h3>
 			<ul>
-				<li class="fragment">Deployment auf Ubuntu-Server</li>
+				<li>Deployment auf Ubuntu-Server</li>
 				<li class="fragment">Git-Clone-Verfahren</li>
 				<li class="fragment">Updates und Fehlerbehebungen per SSH</li>
 			</ul>
